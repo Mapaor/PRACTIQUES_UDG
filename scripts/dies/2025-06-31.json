@@ -1,0 +1,53 @@
+{
+  "metadata": {
+    "dataInfo": [
+      "TOA5",
+      "CR1000",
+      "CR1000",
+      "1431",
+      "CR1000.Std.29",
+      "CPU:multipyr_(13-feb-2023).CR1",
+      "55357",
+      "Table1"
+    ],
+    "dataUnits": [
+      "TS",
+      "RN",
+      "mV",
+      "mV",
+      "mV",
+      "mV",
+      "mV",
+      "mV",
+      "mV",
+      "mV",
+      "mV",
+      "mV",
+      "mV",
+      "mV",
+      "mV",
+      "mV"
+    ],
+    "dataType": [
+      "",
+      "",
+      "Avg",
+      "Avg",
+      "Avg",
+      "Avg",
+      "Avg",
+      "Avg",
+      "Avg",
+      "Avg",
+      "Avg",
+      "Avg",
+      "Std",
+      "Std",
+      "Std",
+      "Std"
+    ],
+    "row_count": 80647,
+    "valid_count": 80647
+  },
+  "data": []
+}
