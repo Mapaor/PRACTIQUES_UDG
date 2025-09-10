@@ -1,0 +1,13 @@
+&input
+ sza=20.0
+ zpres = 0.0
+ wlinf = 0.300
+ wlsup = 0.700
+ wlinc = 0.001
+ albcon = 0.2
+ iaer = 1
+ tbaer = 0.2
+ nstr=8	
+ zout = 0,100
+ iout = 1
+&end

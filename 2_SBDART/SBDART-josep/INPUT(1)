@@ -1,0 +1,19 @@
+&input
+ idatm = 6
+ isat=16
+ sza=0
+ zpres = 0.0
+ albcon = 0.036
+wlinf=0.380
+wlsup=0.440
+wlinc=0.0002
+
+ iaer = 1
+ tbaer = 0.05
+ zgrid1=0.1
+ zgrid2=35
+ ngrid=65
+ nstr = 8	
+ zout = 0,100
+ iout = 1
+&end

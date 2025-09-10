@@ -1,0 +1,18 @@
+&input
+ idatm = 2
+ sza=20.0
+ zpres = 0.0
+ wlinf = 0.55
+ wlsup = 0.55
+ wlinc = 0.001
+ albcon = 0.2
+ iaer = 1
+ tbaer = 0.1
+ nstr=8	
+ zout = 0,100
+ iout = 1
+zcloud=1.0,-5
+
+TCLOUD=1.0 1.0
+nre=8 8
+&end

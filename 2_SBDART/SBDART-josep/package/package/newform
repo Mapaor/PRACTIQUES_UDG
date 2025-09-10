@@ -1,0 +1,28 @@
+#!/local/bin/perl -w
+# 
+# purpose:  convert sbdart spectral files from old to new formats
+#
+# useage:   newform oldfile > newfile
+#
+#   -f      include this flag to convert filter.dat files, leave off
+#           to convert solar.dat and albedo.dat files
+# 
+# example:
+#
+#           newform -f < old_filter.dat > filter.dat
+#           newform < old_solar.dat > solar.dat
+
+$/='';                                    # slurp in whole file
+
+$_=shift or $_='';
+
+if (/-f/) {
+  $_=<>;
+  ($wmn,$wmx,undef,$n,@s)=split;
+} else {
+  $_=<>;
+  ($n,$wmn,$wmx,@s)=split;
+}  
+
+for (0..$n-1) { printf "%10.3f%13.5g\n",$wmn+($wmx-$wmn)*$_/($n-1),$s[$_]}
+
