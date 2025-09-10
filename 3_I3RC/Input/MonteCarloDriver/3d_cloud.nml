@@ -1,0 +1,55 @@
+! Namelist input file for monteCarloDriver
+! 3D Cloud simulation configuration
+! Based on thin_cloud.nml
+
+&monteCarlo
+ ! Number of photons in each batch:
+ numPhotonsPerBatch = 1000,
+ ! Number of batches:
+ numBatches = 100,
+ ! Random number seed (0 = use current time): 
+ randomSeed = 12345,
+ ! Independent pixel approximation (T or F):
+ independentPixel = F,
+ ! Solar zenith angle mu = cos(zenith angle in radians):
+ solarMu = 1.000000,
+ ! Solar azimuth angle (radians):
+ solarAzimuth = 0.0,
+ ! Source function (Planck or Solar):
+ srcfuncflag = 2,
+ ! Delta-M method for highly asymmetric phase functions (T or F):
+ deltaM = T,
+ ! Maximum number of scattering events per photon:
+ maxNumScattering = 500,
+ ! Splitting criterion parameters:
+ ! Multiply importance sampling ratio for splitting:
+ splitMultiplier = 3.0,
+ ! Multiply importance sampling ratio for Russian roulette:
+ splitAccuracy = 3.0,
+ ! Intensity output (T or F):
+ outputIntensity = T,
+ ! Flux output (T or F):
+ outputFlux = T,
+ ! Heating rate and absorption output (T or F):
+ outputAbsorption = T,
+ ! Net CDF output (T or F):
+ outputNetCDF = T,
+/
+
+&I3RCProperty
+ ! Property domain file name:
+ propertyFileName = "./Output/PhysicalPropertiesToDomain/3d_cloud.dom",
+ ! Molecular absorption extinction profile file name (or ''):
+ AbsFileName = '',
+/
+
+&Output
+ ! Intensity output file name:
+ outputRadFile = "./Output/MonteCarloDriver/Intensities_3d_cloud.out",
+ ! Flux output file name:
+ outputFluxFile = "./Output/MonteCarloDriver/Fluxes_3d_cloud.out",
+ ! Heating rate output file name:
+ outputAbsProfFile = "./Output/MonteCarloDriver/Absorption_3d_cloud.out",
+ ! Net CDF output file name:
+ outputNetcdfFile = "./Output/MonteCarloDriver/All_output_3d_cloud.nc",
+/

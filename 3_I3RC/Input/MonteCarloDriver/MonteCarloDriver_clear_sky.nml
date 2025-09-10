@@ -1,0 +1,43 @@
+! Clear-sky Monte Carlo simulation
+! Use to get reference direct radiation values
+!
+&radiativeTransfer
+  solarFlux = 1.0,
+  solarMu = 0.5,           ! KEEP SAME AS CLOUDY SIMULATION
+  solarAzimuth = 0.0,
+  surfaceAlbedo = 0.05,    ! KEEP SAME AS CLOUDY SIMULATION
+  intensityMus = 1.0, 0.866, 0.5,
+  intensityPhis = 0.0, 0.0, 180.0
+/
+
+&monteCarlo
+  numPhotonsPerBatch = 1000,
+  numBatches = 1000,
+  iseed = 44,              ! Different seed for independent calculation
+  nPhaseintervals = 10001
+/
+
+&algorithms
+  useRayTracing = .true.,  ! Same as cloudy simulation
+  useRussianRoulette = .false.,
+  useRussianRouletteForIntensity = .false.,
+  zetaMin = 0.3,
+  useHybridPhaseFunsForIntenCalcs = .false.,
+  hybridPhaseFunWidth = 0.0,
+  numOrdersOrigPhaseFunIntenCalcs = 0,
+  limitIntensityContributions = .false.,
+  maxIntensityContribution = 1.0
+/
+
+&fileNames
+  domainFileName = "./Output/PhysicalPropertiesToDomain/clear_sky.dom",
+  outputRadFile = "./Output/MonteCarloDriver/Clear_Sky_Intensities.out",
+  outputFluxFile = "./Output/MonteCarloDriver/Clear_Sky_Fluxes.out",
+  outputAbsProfFile = "./Output/MonteCarloDriver/Clear_Sky_Absorption.out",
+  outputNetcdfFile = "./Output/MonteCarloDriver/Clear_Sky_All_output.nc"
+/
+
+&output
+  reportAbsorptionProfile = .true.,
+  reportVolumeAbsorption = .false.
+/

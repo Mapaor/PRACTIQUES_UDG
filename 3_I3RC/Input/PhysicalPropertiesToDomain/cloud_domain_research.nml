@@ -1,0 +1,30 @@
+! Research-optimized atmospheric domain configuration
+! Extended atmosphere 0-100 km for complete flux calculations
+! Designed for systematic optical thickness studies
+!
+&fileNames
+ ! Cloud physical properties file (will contain variable optical thickness)
+ ParticleFileName='./Input/PhysicalPropertiesToDomain/cloud_research.txt',
+ ! Scattering table from research Mie calculation
+ ScatTableFiles='./Output/MakeMieTable/cloud_research_0.55µm.phasetab',
+ ! No molecular absorption for simplicity
+ MolecAbsFileName='',
+ ! Output domain file for research
+ outputFileName = "./Output/PhysicalPropertiesToDomain/cloud_research.dom"
+/
+
+&profile
+! Additional levels OUTSIDE the particle file range
+! Particle file already covers 0-100 km, so no additional levels needed
+! Leave empty to use only the particle file levels
+ OtherHeights=,
+! Corresponding temperatures (leave empty)
+ OtherTemps=,
+/
+
+&physicalProperties
+ ! Typical marine cloud droplet concentration
+ DropNumConc=100.,
+ ! Include Rayleigh scattering at 0.55 µm wavelength
+ RayleighWavelength=0.55,
+/

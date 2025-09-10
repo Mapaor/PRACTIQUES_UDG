@@ -1,0 +1,41 @@
+&radiativeTransfer
+  solarFlux = 1.0
+  solarMu = 0.5
+  solarAzimuth = 0.0
+  surfaceAlbedo = 0.1
+  intensityMus = 1.0
+  intensityPhis = 0.0
+/
+
+&monteCarlo
+  numPhotonsPerBatch = 1000
+  numBatches = 3
+  iseed = 12345
+  nPhaseIntervals = 9001
+/
+
+&algorithms
+  useRayTracing = .true.
+  useRussianRoulette = .true.
+  useHybridPhaseFunsForIntenCalcs = .false.
+  hybridPhaseFunWidth = 7.0
+  numOrdersOrigPhaseFunIntenCalcs = 0
+  useRussianRouletteForIntensity = .true.
+  zetaMin = 0.3
+  limitIntensityContributions = .false.
+  maxIntensityContribution = 77.0
+/
+
+&output
+  reportVolumeAbsorption = .false.
+  reportAbsorptionProfile = .false.
+/
+
+&fileNames
+  domainFileName = 'cloud.dom'
+  outputFluxFile = 'Fluxes.out'
+  outputRadFile = ''
+  outputAbsProfFile = ''
+  outputAbsVolumeFile = ''
+  outputNetcdfFile = ''
+/

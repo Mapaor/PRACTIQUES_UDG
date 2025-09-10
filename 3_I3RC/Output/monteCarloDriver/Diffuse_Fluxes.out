@@ -1,0 +1,6 @@
+# Direct and Diffuse Radiation Results
+# TOPDN (direct), BOTDN (direct), TOPDN (diffuse), BOTDN (diffuse)
+# Order 0 = Direct radiation, Order >= 1 = Diffuse radiation
+   0.000000E+00   0.150180E-01   0.338932E+00   0.370598E+00
+# Total_flux_by_order:    0.338932E+00   0.385616E+00
+# Original_total_flux:    0.338556E+00   0.385258E+00

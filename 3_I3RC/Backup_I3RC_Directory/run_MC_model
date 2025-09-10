@@ -1,0 +1,16 @@
+#!/bin/csh -f
+# $Revision: 1 $, $Date: 2009-05-14 12:50:00 (Thu, 14 May 2009) Stefani Huang $
+# $Revision: 1.1 $, $Date: 2009-05-27 12:50:00 (Wed, 27 May 2009) Tamas Varnai $
+# $URL: https://i3rc.gsfc.nasa.gov $
+
+echo "==>Creating scattering phase function look-up table using Mie theory"
+      time ./I3RC-Monte-Carlo-Model/Tools/MakeMieTable ./Input/MakeMieTable/mie_table_cloud.nml
+
+echo "==>Calculating optical properties of simulation domain"
+      time ./I3RC-Monte-Carlo-Model/Tools/PhysicalPropertiesToDomain ./Input/PhysicalPropertiesToDomain/cloud_domain.nml
+      
+echo "==>Running Monte Carlo simulation"
+      time ./I3RC-Monte-Carlo-Model/Example-Drivers/MonteCarloDriver ./Input/MonteCarloDriver/MonteCarloDriver.nml
+      
+echo "==>Congratulation! You are done with Monte Carlo Model. Check your Output now!-"
+

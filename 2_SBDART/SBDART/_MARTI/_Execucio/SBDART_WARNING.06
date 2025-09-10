@@ -1,0 +1,35 @@
+WARNING >>>>> CHEKIN--vertical temperature step may be too large for good accuracy
+
+######################################################################
+
+
+&INPUT
+! --- INPUT (ZSA) ---
+SZA=80
+! --- CONFIGURACIÓ ESPECTRAL ---
+WLINF = 0.28
+WLSUP = 4.0
+WLINC = -0.01
+! --- ATMOSFERA ---
+IDATM = 2       ! Mid-latitude summer
+ISALB = 0       ! Albedo uniforme
+ALBCON = 0.15   ! Albedo de la superfície
+! --- NÚVOLS ---
+ZCLOUD = 4.0     ! Altura (km)
+TCLOUD = 0.2    ! Gruix òptic
+NRE = 8.0      ! Radi efectiu
+! CLDFRAC = 0.35   ! Fracció de núvols
+IMOMC = 5            ! Fase de dispersió (Henyey-Greenstein)
+! --- AEROSOLS ---
+!IAER = 4             ! Tipus (rural, urba, oceànic, troposfèric)
+!TBAER = 0.2           ! Opacitat a 0.55um
+! --- OUTPUT ---
+IOUT = 10       ! Irradiància
+ZOUT = 0, 100   ! Superfície i dalt l'atmosfera
+NSTR = 8        ! Número d'streams
+! --- ALTRES ---
+ISAT=0       ! Sense filtratge
+NOTHRM=-1     ! Sense incloure l'emissió tèrmica
+! IDB(5)=0    ! 0 per defecte (escriure a stdout) | IDB(5)=2 per detalls dels núvols
+/
+

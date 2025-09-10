@@ -1,0 +1,26 @@
+! Clear-sky reference configuration (NO CLOUDS)
+! Use this to get baseline direct radiation for comparison
+!
+&fileNames
+ ! Clear-sky particle file (no clouds)
+ ParticleFileName='./Input/PhysicalPropertiesToDomain/clear_sky.txt',
+ ! Same scattering table (for consistency)
+ ScatTableFiles='./Output/MakeMieTable/cloud_research_0.55um.phasetab',
+ ! No molecular absorption
+ MolecAbsFileName='',
+ ! Output clear-sky domain
+ outputFileName = "./Output/PhysicalPropertiesToDomain/clear_sky.dom"
+/
+
+&profile
+! No additional levels needed
+ OtherHeights=,
+ OtherTemps=,
+/
+
+&physicalProperties
+ ! Same droplet concentration (not used for clear sky)
+ DropNumConc=100.,
+ ! Include Rayleigh scattering for realistic clear sky
+ RayleighWavelength=0.55,
+/

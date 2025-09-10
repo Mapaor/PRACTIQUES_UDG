@@ -1,0 +1,44 @@
+! Namelist input file for MakeMieTable - Highly absorbing test aerosol
+! Creates scattering properties for very absorbing aerosols (low SSA)
+
+&mie_table_input
+! Starting and ending wavelength (microns) of band (wavelen1<=wavelen2):
+ WAVELEN1=0.67, 
+ WAVELEN2=0.67,
+! 
+! Average properties over wavelength (A) or use Planck weighted index
+!  of refraction at center wavelength (C).
+ AVGFLAG='C',
+!
+! Wavelength interval if averaging (micron):
+ DELTAWAVE=0.003,
+!
+! Water, Ice, or Aerosol spherical particles (W, I, A):
+ PARTYPE='A',
+!
+! Highly absorbing aerosol (like black carbon):
+! Very high imaginary part for strong absorption, low SSA
+ RINDEX=(1.60,-0.20),
+! Aerosol particle bulk density (g/cm^3):
+ PARDENS=1.5,
+!
+! Particle size distribution type (G = Gamma, L = Lognormal):
+ DISTFLAG='L',
+!
+! Log standard deviation for lognormal size distribution:
+ ALPHA=0.50,
+!
+! Number of tabulated effective radius (<0 for log-space effective radii):
+ NRETAB=-20,
+! Starting tabulated effective radius (micron):
+ SRETAB=0.05,
+! Ending tabulated effective radius (micron):
+ ERETAB=1.0,
+!
+! Maximum particle radius in size distribution (micron):
+ MAXRADIUS=5.,
+!
+! Output Mie scattering table file name:
+ phaseFunctionTableFile='./Output/MakeMieTable/absorbing_aerosol_w_0.67nm_mie.phasetab'
+!
+/

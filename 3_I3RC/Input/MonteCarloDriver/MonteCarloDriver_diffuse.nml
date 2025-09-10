@@ -1,0 +1,67 @@
+! Configuration for DIFFUSE-ONLY radiation calculation
+! Set useRayTracing = .false. to get predominantly scattered radiation
+! Compare results with main config to separate direct vs diffuse
+!
+&radiativeTransfer
+  ! Solar flux normalization (1.0 = standard solar constant)
+  solarFlux = 1.0,
+  ! Solar zenith angle (cosine) - KEEP SAME AS MAIN CONFIG
+  solarMu = 0.5,
+  ! Solar azimuth (0 = +x direction)
+  solarAzimuth = 0.0,
+  
+  ! Surface albedo (keep same as main)
+  surfaceAlbedo = 0.05,
+  
+  ! Viewing directions for intensity calculations
+  intensityMus = 1.0, 0.866, 0.5,
+  intensityPhis = 0.0, 0.0, 180.0
+/
+
+&monteCarlo
+  ! Same photon statistics as main config
+  numPhotonsPerBatch = 1000,
+  numBatches = 1000,
+  ! Different random seed for independent calculation
+  iseed = 43,
+  ! High-resolution phase function
+  nPhaseintervals = 10001
+/
+
+&algorithms
+  ! KEY DIFFERENCE: Use max cross-section method instead of ray tracing
+  ! This preferentially samples scattered (diffuse) radiation
+  useRayTracing = .false.,
+  ! Disable Russian roulette for consistency
+  useRussianRoulette = .false.,
+  
+  ! Advanced settings for intensity calculations
+  useRussianRouletteForIntensity = .false.,
+  zetaMin = 0.3,
+  
+  ! Standard phase function
+  useHybridPhaseFunsForIntenCalcs = .false.,
+  hybridPhaseFunWidth = 0.0,
+  numOrdersOrigPhaseFunIntenCalcs = 0,
+  
+  ! No intensity contribution limits
+  limitIntensityContributions = .false.,
+  maxIntensityContribution = 1.0
+/
+
+&fileNames
+  ! Same domain file
+  domainFileName = "./Output/PhysicalPropertiesToDomain/cloud_research.dom",
+  
+  ! Different output files for diffuse calculation
+  outputRadFile = "./Output/MonteCarloDriver/Research_Diffuse_Intensities.out",
+  outputFluxFile = "./Output/MonteCarloDriver/Research_Diffuse_Fluxes.out",
+  outputAbsProfFile = "./Output/MonteCarloDriver/Research_Diffuse_Absorption.out",
+  outputNetcdfFile = "./Output/MonteCarloDriver/Research_Diffuse_All_output.nc"
+/
+
+&output
+  ! Enable complete output for research
+  reportAbsorptionProfile = .true.,
+  reportVolumeAbsorption = .false.
+/

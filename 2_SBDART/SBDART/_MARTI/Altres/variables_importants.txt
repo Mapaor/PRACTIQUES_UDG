@@ -1,0 +1,40 @@
+# Geometra solar i espectral
+SZA – Solar Zenith Angle, en graus. Controla la inclinació del sol.
+WLINF, WLSUP – Límit inferior i superior del rang espectral (en micres). Ex: 0.3 a 2.5.
+WLINC – Resolució espectral.
+ISAT – Si vols aplicar un filtre espectral (ex. sensors AVHRR, MFRSR, etc). En el teu cas ISAT=0.
+
+# Atmosfera
+IDATM – Perfil atmosfèric. IDTAM=2 per Mid-lat summer.
+UW – Contingut total de vapor d’aigua (g/cm²). Ex: 2.5
+UO3 – Ozó total (atm-cm), opcional si IDATM ja ho defineix.
+
+# Núvols
+ZCLOUD – Altura del núvol (en km).
+TCLOUD – Gruix òptic del núvol (τ a 0.55μm).
+NRE – Radi efectiu de gotes (en micres). Ex: 10
+LWP – Alternativa a TCLOUD, defineix el camí d’aigua líquida (g/m²).
+IMOMC – Controla el model de dispersió del núvol. El valor per defecte 3 (Henyey-Greenstein) és habitual.
+
+# Aerosols
+IAER – Tipus d’aerosol:
+    0 cap
+    1 rural
+    2 urbà
+    3 oceànic
+    4 troposfèric
+VIS – Visibilitat horitzontal (en km), que s’utilitza per ajustar l’opacitat aerosol (més visibilitat, menys aerosol).
+RHAER – Humitat relativa que afecta la mida de partícules (opcional).
+
+# Superfície
+ISALB – Tipus d’albedo:
+    0 Constant (ALBCON)
+    1 Neu
+    4 Aigua oceànica
+ALBCON – Valor d’albedo si ISALB=0.
+
+# Sortida
+IOUT – Controla el tipus de sortida:
+    10 Fluxos radiatius (habitual)
+    21 Radiància espectral angular
+ZOUT – Altures on es vol la sortida. Ex: 0, 100 per superfície i TOA.

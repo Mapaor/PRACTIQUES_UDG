@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/6/trunk/I3RC-Examples
+END
+i3rcLandsatCloud.f95
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/6/trunk/I3RC-Examples/i3rcLandsatCloud.f95
+END
+i3rcRadarCloud.f95
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/6/trunk/I3RC-Examples/i3rcRadarCloud.f95
+END
+i3rcStepCloud.f95
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/6/trunk/I3RC-Examples/i3rcStepCloud.f95
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/6/trunk/I3RC-Examples/Makefile
+END

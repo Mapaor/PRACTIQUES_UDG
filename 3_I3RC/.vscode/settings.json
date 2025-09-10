@@ -1,0 +1,26 @@
+{
+    "fortran.fortls.disabled": true,
+    "extensions.ignoreRecommendations": true, // Per evitar notificacions molestes
+    "workbench.editorAssociations": {
+        // "*.md": "vscode.markdown.preview.editor",
+        "*.copilotmd": "vscode.markdown.preview.editor",
+        "*.svg": "default",
+        "*.png": "imagePreview.previewEditor"
+    },
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+    "fortran.linter.includePaths": [
+        "/mods"
+    ],
+    "fortran.linter.extraArgs": [
+        "-Wall",
+        "-J/mods",
+        "-Wno-unused-variable"
+    ],
+    // "fortran.linter.compiler": "Disabled" 
+}
+

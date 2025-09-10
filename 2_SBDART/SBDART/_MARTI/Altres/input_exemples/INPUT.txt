@@ -1,0 +1,32 @@
+
+&INPUT
+! --- SZA (VARIABLE INPUT) ---
+  SZA = 10 
+
+! --- CONFIGURACIÓ ESPECTRAL ---
+  WLINF = 0.28
+  WLSUP = 4.0
+  WLINC = 0.001
+
+! --- ATMOSFERA ---
+  IDATM = 2       ! Mid-latitude summer
+  ISALB = 4       ! Aigua oceànica (de moment)
+
+! --- NÚVOLS ---
+  ZCLOUD = 1.5, 8.0     ! Núvol baix i alt
+  TCLOUD = 0.2, 0.2     ! Gruix òptic
+  NRE = 10.0, 20.0      ! Radi efectiu núvols baixos i alts
+  IMOMC = 3             ! Fase de dispersió (Henyey-Greenstein)
+
+! --- AEROSOLS ---
+  ! IAER = 4              ! Tipus: troposfèric
+  ! VIS = 18.0            ! Estimat perquè τ ≈ 0.2 (visibilitat ~18 km)
+  ! RHAER = 60.0          ! Humitat relativa per als aerosols
+
+! --- OUTPUT ---
+  IOUT = 10       ! Irradiància directa, difusa, total (up, down, net)
+  ZOUT = 0, 100   ! Superfície i dalt l'atmosfera
+  NOTHRM = 1      ! Sense emissió tèrmica
+  ! NSTR = 8        ! Número d'streams (bo per núvols i aerosols)
+
+/

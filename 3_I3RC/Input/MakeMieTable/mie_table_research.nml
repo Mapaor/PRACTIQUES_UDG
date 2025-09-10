@@ -1,0 +1,14 @@
+! Research configuration for systematic studies
+&mie_table_input
+ WAVELEN1=0.55, 
+ WAVELEN2=0.55,
+ AVGFLAG='C',
+ PARTYPE='W',
+ DISTFLAG='G',
+ ALPHA=7.0,
+ NRETAB=-35,
+ SRETAB=2.0,
+ ERETAB=25.0,
+ MAXRADIUS=100.0,
+ phaseFunctionTableFile='./Output/MakeMieTable/cloud_research_0.55um.phasetab'
+/

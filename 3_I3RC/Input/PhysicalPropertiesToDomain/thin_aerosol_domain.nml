@@ -1,0 +1,29 @@
+! Namelist input file for PhysicalPropertiesToDomain
+! Generated for thin_aerosol (dust aerosol) with optical depth 0.2
+
+&fileNames
+ ! Atmospheric optical properties file name:
+ ParticleFileName='./Input/PhysicalPropertiesToDomain/thin_aerosol.txt',
+ ! Scattering (phase function) table file names:
+ ScatTableFiles='./Output/MakeMieTable/aerosol_w_0.67nm_mie.phasetab',
+ ! Molecular absorption extinction profile file name (or ''):
+ MolecAbsFileName='',
+ ! Name of domain (output) file
+ outputFileName = "./Output/PhysicalPropertiesToDomain/thin_aerosol.dom"
+/ 
+
+&profile
+!
+! Other height levels (km):
+ OtherHeights=0.0,
+!
+! Temperatures at other height levels (km):
+ OtherTemps=288.0,
+/ 
+
+&physicalProperties
+ ! Aerosol number concentration (not used for multicomponent file):
+ DropNumConc=1000.,
+ ! Wavelength for molecular Rayleigh scattering (<=0 for none):
+ RayleighWavelength=0.0,
+/

@@ -1,0 +1,13 @@
+!   I3RC Monte Carlo 3D Solar Radiative Transfer: Flux
+!  Property_File=cloud.dom                                                   
+!  Num_Photons=      3000
+!  PhotonTracing=T    Russian_Roulette=T
+!  Hybrid_Phase_Func_for_Radiance=F   Gaussian_Phase_Func_Width_deg= 7.00
+!  Solar_Flux= 0.100000E+01   Solar_Mu= 0.5000000   Solar_Phi=  0.000
+!  Lambertian_Surface_Albedo= 0.1000
+!  Output_Type= Pixel Flux
+!  Upwelling_Level=  0.800   Downwelling_level=  0.000
+!   X      Y           Flux_Up             Flux_Down            Flux_Absorbed 
+!                  Mean     StdErr       Mean     StdErr       Mean     StdErr
+!  Average:        0.5906    0.0068     0.4540    0.0059     0.0001    0.0000
+  0.050  0.050     0.5906    0.0068     0.4540    0.0059     0.0001    0.0000

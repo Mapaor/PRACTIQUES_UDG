@@ -1,0 +1,23 @@
+
+
+&INPUT
+  SZA = 75
+  IDAY = 0
+  WLINF = 0.28
+  WLSUP = 4.0
+  WLINC = 0.001
+  IOUT = 10
+  ZOUT = 0, 100
+  NOTHRM = 1
+  NSTR = 8
+  IDATM = 2
+  ISALB = 4
+  ZCLOUD = 1.5, 8.0
+  TCLOUD = 0.2, 0.2
+  NRE = 10.0, 20.0
+  IMOMC = 3
+  IAER = 4
+  VIS = 18.0
+  RHAER = 60.0
+/
+

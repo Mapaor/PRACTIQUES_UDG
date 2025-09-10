@@ -1,0 +1,29 @@
+! Simple aerosol configuration for testing - use existing cloud phase table temporarily
+! Generated for minimal_aerosol_test with very low optical depth
+
+&fileNames
+ ! Atmospheric optical properties file name:
+ ParticleFileName='./Input/PhysicalPropertiesToDomain/minimal_aerosol_test.txt',
+ ! Scattering (phase function) table file names (using cloud table temporarily):
+ ScatTableFiles='./Output/MakeMieTable/cloud_w_0.67nm_mie.phasetab',
+ ! Molecular absorption extinction profile file name (or ''):
+ MolecAbsFileName='',
+ ! Name of domain (output) file
+ outputFileName = "./Output/PhysicalPropertiesToDomain/minimal_aerosol_test.dom"
+/ 
+
+&profile
+!
+! Other height levels (km):
+ OtherHeights=0.0,
+!
+! Temperatures at other height levels (km):
+ OtherTemps=288.0,
+/ 
+
+&physicalProperties
+ ! Cloud droplet number concentration (cm^-3) for a 1 parameter LWC file:
+ DropNumConc=100.,
+ ! Wavelength for molecular Rayleigh scattering (<=0 for none):
+ RayleighWavelength=0.0,
+/

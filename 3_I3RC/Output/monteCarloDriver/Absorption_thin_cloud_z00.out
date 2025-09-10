@@ -1,0 +1,14 @@
+!   I3RC Monte Carlo 3D Solar Radiative Transfer: Absorption Profile
+!  Property_File=./Output/PhysicalPropertiesToDomain/thin_cloud.dom          
+!  Num_Photons=      2000
+!  PhotonTracing=T    Russian_Roulette=F
+!  Hybrid_Phase_Func_for_Radiance=F   Gaussian_Phase_Func_Width_deg= 0.00
+!  Solar_Flux= 0.100000E+01   Solar_Mu= 1.0000000   Solar_Phi=  0.000
+!  Lambertian_Surface_Albedo= 0.0000
+!  Output_Type= Absorption Profile
+!   Z    Absorbed_Flux (flux/km) 
+!          Mean     StdErr 
+  0.250     0.0000    0.0000
+  0.575     0.0000    0.0000
+  0.725     0.0000    0.0000
+141.900     0.0000    0.0000

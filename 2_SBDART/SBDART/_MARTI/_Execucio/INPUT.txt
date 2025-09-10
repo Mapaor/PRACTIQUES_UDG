@@ -1,0 +1,30 @@
+
+&INPUT
+! --- INPUT (ZSA) ---
+SZA={sza} ! El posem dinamicament amb python
+! --- CONFIGURACIÓ ESPECTRAL ---
+WLINF = 0.28
+WLSUP = 4.0
+WLINC = 0.001
+! --- ATMOSFERA ---
+IDATM = 2       ! Mid-latitude summer
+ISALB = 0       ! Albedo uniforme
+ALBCON = 0.15   ! Albedo de la superfície
+! --- NÚVOLS ---
+ZCLOUD = 2.5, 6.0     ! Altura (km)
+TCLOUD = 0.1, 0.1     ! Gruix òptic 
+NRE = 8.0, 8.0      ! Radi efectiu
+! CLDFRAC = 0.75, 0.75   ! Fracció de núvols
+IMOMC = 3            ! Fase de dispersió (Henyey-Greenstein)
+! --- AEROSOLS ---
+! IAER = 1              ! Tipus: rural
+! TBAER = 0.2           ! Opacitat a 0.55um
+! --- OUTPUT ---
+IOUT = 10       ! Irradiància
+ZOUT = 0, 100   ! Superfície i dalt l'atmosfera
+NSTR = 8        ! Número d'streams
+! --- ALTRES ---
+ISAT=0       ! Sense filtratge
+NOTHRM=1     ! Sense emissió tèrmica
+/
+

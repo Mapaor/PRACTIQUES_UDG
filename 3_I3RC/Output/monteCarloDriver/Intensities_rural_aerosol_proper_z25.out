@@ -1,0 +1,18 @@
+!   I3RC Monte Carlo 3D Solar Radiative Transfer: Radiance
+!  Property_File=./Output/PhysicalPropertiesToDomain/rural_aerosol_proper.dom
+!  Num_Photons=    100000
+!  PhotonTracing=T    Russian_Roulette=F
+!  Hybrid_Phase_Func_for_Radiance=F   Gaussian_Phase_Func_Width_deg= 0.00
+!  Intensity_uses_Russian_Roulette=F   Intensity_Russian_Roulette_zeta_min= 0.30
+!  limited_intensity_contributions=F   max_intensity_contribution= 1.00
+!  Solar_Flux= 0.100000E+01   Solar_Mu= 0.9063080   Solar_Phi=  0.000
+!  Lambertian_Surface_Albedo= 0.0000
+!  Output_Type= Pixel Radiance
+!  RADIANCE AT Z=285.000   NXO=   1   NYO=   1   NDIR=   3
+!   X      Y         Radiance (Mean, StdErr)
+!   1.00000   0.00  <- (mu,phi)
+  0.050  0.050    0.0050    0.0001
+!   0.50000   0.00  <- (mu,phi)
+  0.050  0.050    0.0125    0.0002
+!   0.50000 180.00  <- (mu,phi)
+  0.050  0.050    0.0087    0.0001

@@ -1,0 +1,71 @@
+! Optimized Monte Carlo configuration for systematic flux studies
+! Designed to extract TOPDN, BOTDN, BOTDIF for research
+! Easy modification of solar zenith angle and accuracy
+!
+&radiativeTransfer
+  ! Solar flux normalization (1.0 = standard solar constant)
+  solarFlux = 1.0,
+  ! Solar zenith angle (cosine) - MODIFY THIS FOR YOUR STUDIES
+  ! 1.0 = overhead sun (0°), 0.866 = 30°, 0.5 = 60°, 0.342 = 70°
+  solarMu = 0.5,
+  ! Solar azimuth (0 = +x direction)
+  solarAzimuth = 0.0,
+  
+  ! Surface albedo (0.05 = typical dark surface, 0.8 = snow/ice)
+  surfaceAlbedo = 0.05,
+  
+  ! Viewing directions for intensity calculations
+  ! Include nadir (1.0, 0°) and some angles for validation
+  intensityMus = 1.0, 0.866, 0.5,
+  intensityPhis = 0.0, 0.0, 180.0
+/
+
+&monteCarlo
+  ! High-accuracy settings for research
+  ! More photons = better statistics but longer computation
+  numPhotonsPerBatch = 1000,
+  numBatches = 1000,
+  ! Random seed (change for independent runs)
+  iseed = 42,
+  ! High-resolution phase function
+  nPhaseintervals = 10001
+/
+
+&algorithms
+  ! Use photon ray tracing (most accurate)
+  useRayTracing = .true.,
+  ! Disable Russian roulette for consistency
+  useRussianRoulette = .false.,
+  
+  ! Advanced settings for intensity calculations
+  useRussianRouletteForIntensity = .false.,
+  zetaMin = 0.3,
+  
+  ! Standard phase function (no hybrid modifications)
+  useHybridPhaseFunsForIntenCalcs = .false.,
+  hybridPhaseFunWidth = 0.0,
+  numOrdersOrigPhaseFunIntenCalcs = 0,
+  
+  ! No intensity contribution limits
+  limitIntensityContributions = .false.,
+  maxIntensityContribution = 1.0
+/
+
+&fileNames
+  ! Domain file from research setup
+  domainFileName = "./Output/PhysicalPropertiesToDomain/cloud_research.dom",
+  
+  ! Output files for your variables
+  outputRadFile = "./Output/MonteCarloDriver/Research_Intensities.out",
+  outputFluxFile = "./Output/MonteCarloDriver/Research_Fluxes.out",
+  outputAbsProfFile = "./Output/MonteCarloDriver/Research_Absorption.out",
+  ! NetCDF file with all data for Python analysis
+  outputNetcdfFile = "./Output/MonteCarloDriver/Research_All_output.nc"
+/
+
+&output
+  ! Enable complete output for research
+  reportAbsorptionProfile = .true.,
+  ! Enable 3D absorption (warning: creates large files)
+  reportVolumeAbsorption = .false.
+/

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/2/trunk/I3RC-Examples/Data
+END
+C.1_leg_coef
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/2/trunk/I3RC-Examples/Data/C.1_leg_coef
+END
+C.1_PF
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/2/trunk/I3RC-Examples/Data/C.1_PF
+END
+scene43.tau.128x128
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/2/trunk/I3RC-Examples/Data/scene43.tau.128x128
+END
+scene43.dz.128x128
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2/trunk/I3RC-Examples/Data/scene43.dz.128x128
+END
+mmcr_tau_32km_020898
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/2/trunk/I3RC-Examples/Data/mmcr_tau_32km_020898
+END

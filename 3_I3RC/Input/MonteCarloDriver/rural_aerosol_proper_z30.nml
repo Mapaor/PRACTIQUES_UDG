@@ -1,0 +1,70 @@
+! Namelist input file for monteCarloDriver
+! Generated for rural_aerosol_proper at 30.0° zenith angle
+! Solar zenith: 30.0°, mu = 0.866025
+! Based on: rural_aerosol_proper.nml
+
+! Namelist input file for monteCarloDriver
+! Generated for rural aerosol proper test
+
+&radiativeTransfer
+  ! Normalization 
+  solarFlux = 1.0, 
+  ! Cosine of the solar zenith angle
+  solarMu = 0.866025,  
+  ! Azimuthal direction of incoming photons (0 = +x direction)
+  solarAzimuth = 0.0
+  !
+  surfaceAlbedo = 0.0, 
+  ! Cosine of directions at which to compute intensity (+ve)
+  !   The number should match the number of azimuths below.  
+  intensityMus = 1.0, 0.5, 0.5
+  ! Azimuth of direction at which to compute intensity
+  intensityPhis = 0.0, 0.0, 180.0 
+/  
+
+&monteCarlo
+  ! The number of photons per batch in the MC calculation
+  numPhotonsPerBatch = 1000, 
+  ! The number of batches in the MC calculation
+  !   Total number of photons used is numPhotonsPerBatch * numBatches
+  numBatches = 100, 
+  ! Random number seed (used in conjunction with batch number)
+  iseed = 10, 
+  ! Number of equal probability angles to compute in the inverse phase function
+  nPhaseintervals = 10001
+/
+
+&algorithms
+  ! Photon tracing (T) or max cross-section (F)? 
+  useRayTracing = .true., 
+  ! Use Russian roulette (kill/refresh weak photons)? 
+  useRussianRoulette = .false.,
+  useRussianRouletteForIntensity = .false.,  
+  zetaMin = 0.3, 
+  useHybridPhaseFunsForIntenCalcs = .false., 
+  hybridPhaseFunWidth = 0., numOrdersOrigPhaseFunIntenCalcs = 0, 
+  limitIntensityContributions = .false., 
+  maxIntensityContribution = 1.0, 
+/
+
+&fileNames
+  ! The domain file describing the distribution of optical properties
+  domainFileName = "./Output/PhysicalPropertiesToDomain/rural_aerosol_proper.dom", 
+  ! Name of ascii file contain intensity at specified direction
+  outputRadFile = "./Output/MonteCarloDriver/Intensities_rural_aerosol_proper_z30.out", 
+  ! Name of ascii file with pixel-by-pixel fluxes
+  outputFluxFile = "./Output/MonteCarloDriver/Fluxes_rural_aerosol_proper_z30.out", 
+  ! Name of ascii file for the absorption profile
+  outputAbsProfFile = "./Output/MonteCarloDriver/Absorption_rural_aerosol_proper_z30.out",
+  ! Netcdf output file
+  outputNetcdfFile = "./Output/MonteCarloDriver/All_output_rural_aerosol_proper_z30.nc"
+/ 
+
+&output 
+  ! Include the domain-mean flux divergence profile?
+  reportAbsorptionProfile = .false., 
+  ! Include the cell-by-cell flux divergence? 
+  !   This is usually the largest output field by far 
+  reportVolumeAbsorption = .false. 
+  !
+/
