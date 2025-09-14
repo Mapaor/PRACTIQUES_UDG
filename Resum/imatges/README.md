@@ -1,6 +1,6 @@
 ### Gràfics generats
 
-Els gràfics generats es poden trobar en els diferents fitxer `.ipynb`:
+Els gràfics generats es poden trobar a:
 - [PRACTIQUES_UDG\1_PIRANOMETRES\scripts\grafics.ipynb](../../1_PIRANOMETRES/scripts/grafics.ipynb)
 - [PRACTIQUES_UDG\1_PIRANOMETRES\scripts\dadesComparativa\calibratge.ipynb](../../1_PIRANOMETRES/scripts/dadesComparativa/calibratge.ipynb)
 - [PRACTIQUES_UDG\1_PIRANOMETRES\scripts\dadesComparativa\comparativa.ipynb](../../1_PIRANOMETRES/scripts/dadesComparativa/comparativa.ipynb)
